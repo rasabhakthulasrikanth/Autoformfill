@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.1 on win32)" generated="20231219 10:34:37.922" rpa="false" schemaversion="4">
+<suite id="s1" name="Form" source="C:\Users\srika\OneDrive\Desktop\Autoformfill\form.robot">
+<test id="s1-t1" name="get csv" line="8">
+<kw name="read csv file">
+<kw name="Get File" library="OperatingSystem">
+<var>${csv}</var>
+<arg>readcsv.csv</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231219 10:34:38.113" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\srika\OneDrive\Desktop\Autoformfill\readcsv.csv"&gt;C:\Users\srika\OneDrive\Desktop\Autoformfill\readcsv.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20231219 10:34:38.113" level="INFO">${csv} = file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|srikanth|ranveer|sriku@gmail.com|17-04-1998|Male|karimnagar|Telangana|Greenland|I have completed my graduation in JBIET college with 9.5C...</msg>
+<status status="PASS" starttime="20231219 10:34:38.113" endtime="20231219 10:34:38.113"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{read}</var>
+<arg>${csv}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">@{read} = [ file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|srikanth|ranveer|sriku@gmail.com|17-04-1998|Male|karimnagar|Telangana|Greenland|I have completed my graduation in JBIET college with 9....</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>@{read}</arg>
+<doc>Splits the given string to lines.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">3 lines returned</msg>
+<msg timestamp="20231219 10:34:38.126" level="INFO">@{lines} = [ file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|srikanth|ranveer|sriku@gmail.com|17-04-1998|Male|karimnagar|Telangana|Greenland|I have completed my graduation in JBIET college with 9....</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}">file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|srikanth|ranveer|sriku@gmail.com|17-04-1998|Male|karimnagar|Telangana|Greenland|I have completed my graduation in JBIET college with 9.5C...</var>
+<kw name="Split String" library="String">
+<var>@{split}</var>
+<arg>${line}</arg>
+<arg>|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">@{split} = [ file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html | srikanth | ranveer | sriku@gmail.com | 17-04-1998 | Male | karimnagar | Telangana | Greenland | I have completed my graduation in JBI...</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${first}</var>
+<arg>${split}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${first} = file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${second}</var>
+<arg>${split}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${second} = srikanth</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${third}</var>
+<arg>${split}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${third} = ranveer</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fourth}</var>
+<arg>${split}[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${fourth} = sriku@gmail.com</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fifth}</var>
+<arg>${split}[4]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${fifth} = 17-04-1998</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${sixth}</var>
+<arg>${split}[5]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${sixth} = Male</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${seven}</var>
+<arg>${split}[6]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${seven} = karimnagar</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eight}</var>
+<arg>${split}[7]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${eight} = Telangana</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ninth}</var>
+<arg>${split}[8]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${ninth} = Greenland</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${tenth}</var>
+<arg>${split}[9]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${tenth} = I have completed my graduation in JBIET college with 9.5CGPA.</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eleven}</var>
+<arg>${split}[10]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${eleven} = Srikanth12@</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${twelve}</var>
+<arg>${split}[11]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">${twelve} = Srikanth12@</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:38.126"/>
+</kw>
+<kw name="launch browser">
+<arg>${first}</arg>
+<arg>${second}</arg>
+<arg>${third}</arg>
+<arg>${fourth}</arg>
+<arg>${fifth}</arg>
+<arg>${sixth}</arg>
+<arg>${seven}</arg>
+<arg>${eight}</arg>
+<arg>${ninth}</arg>
+<arg>${tenth}</arg>
+<arg>${eleven}</arg>
+<arg>${twelve}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${first}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231219 10:34:38.126" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html'.</msg>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:39.637"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231219 10:34:39.637" endtime="20231219 10:34:39.771"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:firstname</arg>
+<arg>${second}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:39.771" level="INFO">Typing text 'srikanth' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20231219 10:34:39.771" endtime="20231219 10:34:39.899"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:lastname</arg>
+<arg>${third}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:39.900" level="INFO">Typing text 'ranveer' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20231219 10:34:39.899" endtime="20231219 10:34:39.993"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>${fourth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:39.994" level="INFO">Typing text 'sriku@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20231219 10:34:39.993" endtime="20231219 10:34:40.097"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:date</arg>
+<arg>${fifth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.097" level="INFO">Typing text '17-04-1998' into text field 'id:date'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.097" endtime="20231219 10:34:40.176"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>radiooptions</arg>
+<arg>${sixth}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231219 10:34:40.178" level="INFO">Selecting 'Male' from radio button 'radiooptions'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.176" endtime="20231219 10:34:40.236"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle1</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.236" level="INFO">Selecting checkbox 'id:vehicle1'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.236" endtime="20231219 10:34:40.312"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle2</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.313" level="INFO">Selecting checkbox 'id:vehicle2'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.312" endtime="20231219 10:34:40.385"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>${seven}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.385" level="INFO">Typing text 'karimnagar' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.385" endtime="20231219 10:34:40.479"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:country-state</arg>
+<arg>${eight}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231219 10:34:40.479" level="INFO">Selecting options from selection list 'id:country-state' by label Telangana.</msg>
+<status status="PASS" starttime="20231219 10:34:40.479" endtime="20231219 10:34:40.557"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:country</arg>
+<arg>${ninth}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231219 10:34:40.559" level="INFO">Selecting options from selection list 'id:country' by value Greenland.</msg>
+<status status="PASS" starttime="20231219 10:34:40.557" endtime="20231219 10:34:40.628"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:subject</arg>
+<arg>${tenth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.628" level="INFO">Typing text 'I have completed my graduation in JBIET college with 9.5CGPA.' into text field 'name:subject'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.628" endtime="20231219 10:34:40.811"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>${eleven}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.813" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg timestamp="20231219 10:34:40.843" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:40.898" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:40.811" endtime="20231219 10:34:40.898"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:re-enter password</arg>
+<arg>${twelve}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.898" level="INFO">Typing password into text field 'name:re-enter password'.</msg>
+<msg timestamp="20231219 10:34:40.930" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:40.979" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:40.898" endtime="20231219 10:34:40.979"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="registrationForm"]/div[13]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:40.982" level="INFO">Clicking button 'xpath://*[@id="registrationForm"]/div[13]/input'.</msg>
+<status status="PASS" starttime="20231219 10:34:40.979" endtime="20231219 10:34:41.051"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231219 10:34:41.051" endtime="20231219 10:34:43.141"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:43.141"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:43.141"/>
+</iter>
+<iter>
+<var name="${line}">file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|shiva|ranveer|shiva@gmail.com|26-10-2000|Male|warangal|Tamil Nadu|Italy|I have completed my graduation in JNTUH college with 9.3CGPA.|Shi...</var>
+<kw name="Split String" library="String">
+<var>@{split}</var>
+<arg>${line}</arg>
+<arg>|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231219 10:34:43.142" level="INFO">@{split} = [ file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html | shiva | ranveer | shiva@gmail.com | 26-10-2000 | Male | warangal | Tamil Nadu | Italy | I have completed my graduation in JNTUH colle...</msg>
+<status status="PASS" starttime="20231219 10:34:43.142" endtime="20231219 10:34:43.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${first}</var>
+<arg>${split}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${first} = file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${second}</var>
+<arg>${split}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${second} = shiva</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${third}</var>
+<arg>${split}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${third} = ranveer</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fourth}</var>
+<arg>${split}[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${fourth} = shiva@gmail.com</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fifth}</var>
+<arg>${split}[4]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${fifth} = 26-10-2000</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${sixth}</var>
+<arg>${split}[5]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${sixth} = Male</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${seven}</var>
+<arg>${split}[6]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${seven} = warangal</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eight}</var>
+<arg>${split}[7]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${eight} = Tamil Nadu</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ninth}</var>
+<arg>${split}[8]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${ninth} = Italy</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${tenth}</var>
+<arg>${split}[9]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${tenth} = I have completed my graduation in JNTUH college with 9.3CGPA.</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eleven}</var>
+<arg>${split}[10]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${eleven} = Shiva12@</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${twelve}</var>
+<arg>${split}[11]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">${twelve} = Shiva12@</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:43.143"/>
+</kw>
+<kw name="launch browser">
+<arg>${first}</arg>
+<arg>${second}</arg>
+<arg>${third}</arg>
+<arg>${fourth}</arg>
+<arg>${fifth}</arg>
+<arg>${sixth}</arg>
+<arg>${seven}</arg>
+<arg>${eight}</arg>
+<arg>${ninth}</arg>
+<arg>${tenth}</arg>
+<arg>${eleven}</arg>
+<arg>${twelve}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${first}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231219 10:34:43.143" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html'.</msg>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:44.522"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231219 10:34:44.522" endtime="20231219 10:34:44.642"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:firstname</arg>
+<arg>${second}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:44.642" level="INFO">Typing text 'shiva' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20231219 10:34:44.642" endtime="20231219 10:34:44.772"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:lastname</arg>
+<arg>${third}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:44.772" level="INFO">Typing text 'ranveer' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20231219 10:34:44.772" endtime="20231219 10:34:44.889"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>${fourth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:44.890" level="INFO">Typing text 'shiva@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20231219 10:34:44.889" endtime="20231219 10:34:44.994"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:date</arg>
+<arg>${fifth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:44.995" level="INFO">Typing text '26-10-2000' into text field 'id:date'.</msg>
+<status status="PASS" starttime="20231219 10:34:44.994" endtime="20231219 10:34:45.081"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>radiooptions</arg>
+<arg>${sixth}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231219 10:34:45.081" level="INFO">Selecting 'Male' from radio button 'radiooptions'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.081" endtime="20231219 10:34:45.141"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle1</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.142" level="INFO">Selecting checkbox 'id:vehicle1'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.141" endtime="20231219 10:34:45.218"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle2</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.219" level="INFO">Selecting checkbox 'id:vehicle2'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.218" endtime="20231219 10:34:45.289"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>${seven}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.289" level="INFO">Typing text 'warangal' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.289" endtime="20231219 10:34:45.384"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:country-state</arg>
+<arg>${eight}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231219 10:34:45.384" level="INFO">Selecting options from selection list 'id:country-state' by label Tamil Nadu.</msg>
+<status status="PASS" starttime="20231219 10:34:45.384" endtime="20231219 10:34:45.462"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:country</arg>
+<arg>${ninth}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231219 10:34:45.462" level="INFO">Selecting options from selection list 'id:country' by value Italy.</msg>
+<status status="PASS" starttime="20231219 10:34:45.462" endtime="20231219 10:34:45.530"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:subject</arg>
+<arg>${tenth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.530" level="INFO">Typing text 'I have completed my graduation in JNTUH college with 9.3CGPA.' into text field 'name:subject'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.530" endtime="20231219 10:34:45.710"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>${eleven}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.712" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg timestamp="20231219 10:34:45.747" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:45.800" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:45.710" endtime="20231219 10:34:45.800"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:re-enter password</arg>
+<arg>${twelve}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.800" level="INFO">Typing password into text field 'name:re-enter password'.</msg>
+<msg timestamp="20231219 10:34:45.835" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:45.886" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:45.800" endtime="20231219 10:34:45.886"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="registrationForm"]/div[13]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:45.886" level="INFO">Clicking button 'xpath://*[@id="registrationForm"]/div[13]/input'.</msg>
+<status status="PASS" starttime="20231219 10:34:45.886" endtime="20231219 10:34:45.965"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231219 10:34:45.965" endtime="20231219 10:34:48.054"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:43.143" endtime="20231219 10:34:48.054"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:43.141" endtime="20231219 10:34:48.054"/>
+</iter>
+<iter>
+<var name="${line}">file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html|sujatha|singh|sujatha@gmail.com|01-01-1985|FeMale|hyderabad|Puducherry|India|I have completed my graduation in BVRIT college with 8.85CGP...</var>
+<kw name="Split String" library="String">
+<var>@{split}</var>
+<arg>${line}</arg>
+<arg>|</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">@{split} = [ file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html | sujatha | singh | sujatha@gmail.com | 01-01-1985 | FeMale | hyderabad | Puducherry | India | I have completed my graduation in BVRIT ...</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${first}</var>
+<arg>${split}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${first} = file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${second}</var>
+<arg>${split}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${second} = sujatha</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${third}</var>
+<arg>${split}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${third} = singh</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fourth}</var>
+<arg>${split}[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${fourth} = sujatha@gmail.com</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${fifth}</var>
+<arg>${split}[4]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${fifth} = 01-01-1985</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${sixth}</var>
+<arg>${split}[5]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${sixth} = FeMale</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${seven}</var>
+<arg>${split}[6]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${seven} = hyderabad</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eight}</var>
+<arg>${split}[7]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${eight} = Puducherry</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${ninth}</var>
+<arg>${split}[8]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${ninth} = India</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${tenth}</var>
+<arg>${split}[9]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${tenth} = I have completed my graduation in BVRIT college with 8.85CGPA.</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eleven}</var>
+<arg>${split}[10]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${eleven} = Sujatha12@</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${twelve}</var>
+<arg>${split}[11]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">${twelve} = Sujatha12@</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:48.054"/>
+</kw>
+<kw name="launch browser">
+<arg>${first}</arg>
+<arg>${second}</arg>
+<arg>${third}</arg>
+<arg>${fourth}</arg>
+<arg>${fifth}</arg>
+<arg>${sixth}</arg>
+<arg>${seven}</arg>
+<arg>${eight}</arg>
+<arg>${ninth}</arg>
+<arg>${tenth}</arg>
+<arg>${eleven}</arg>
+<arg>${twelve}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${first}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231219 10:34:48.054" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/srika/OneDrive/Desktop/Autoformhcj/index.html'.</msg>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:49.451"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231219 10:34:49.451" endtime="20231219 10:34:49.581"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:firstname</arg>
+<arg>${second}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:49.581" level="INFO">Typing text 'sujatha' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20231219 10:34:49.581" endtime="20231219 10:34:49.705"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:lastname</arg>
+<arg>${third}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:49.715" level="INFO">Typing text 'singh' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20231219 10:34:49.715" endtime="20231219 10:34:49.824"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>${fourth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:49.826" level="INFO">Typing text 'sujatha@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20231219 10:34:49.826" endtime="20231219 10:34:49.930"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:date</arg>
+<arg>${fifth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:49.930" level="INFO">Typing text '01-01-1985' into text field 'id:date'.</msg>
+<status status="PASS" starttime="20231219 10:34:49.930" endtime="20231219 10:34:50.011"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>radiooptions</arg>
+<arg>${sixth}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231219 10:34:50.012" level="INFO">Selecting 'FeMale' from radio button 'radiooptions'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.011" endtime="20231219 10:34:50.071"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle1</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.071" level="INFO">Selecting checkbox 'id:vehicle1'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.071" endtime="20231219 10:34:50.143"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:vehicle2</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.143" level="INFO">Selecting checkbox 'id:vehicle2'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.143" endtime="20231219 10:34:50.216"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>${seven}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.218" level="INFO">Typing text 'hyderabad' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.216" endtime="20231219 10:34:50.320"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:country-state</arg>
+<arg>${eight}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20231219 10:34:50.320" level="INFO">Selecting options from selection list 'id:country-state' by label Puducherry.</msg>
+<status status="PASS" starttime="20231219 10:34:50.320" endtime="20231219 10:34:50.397"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:country</arg>
+<arg>${ninth}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231219 10:34:50.397" level="INFO">Selecting options from selection list 'id:country' by value India.</msg>
+<status status="PASS" starttime="20231219 10:34:50.397" endtime="20231219 10:34:50.472"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:subject</arg>
+<arg>${tenth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.473" level="INFO">Typing text 'I have completed my graduation in BVRIT college with 8.85CGPA.' into text field 'name:subject'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.472" endtime="20231219 10:34:50.666"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>${eleven}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.666" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg timestamp="20231219 10:34:50.704" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:50.757" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:50.666" endtime="20231219 10:34:50.757"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:re-enter password</arg>
+<arg>${twelve}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.757" level="INFO">Typing password into text field 'name:re-enter password'.</msg>
+<msg timestamp="20231219 10:34:50.795" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231219 10:34:50.847" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231219 10:34:50.757" endtime="20231219 10:34:50.847"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://*[@id="registrationForm"]/div[13]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231219 10:34:50.847" level="INFO">Clicking button 'xpath://*[@id="registrationForm"]/div[13]/input'.</msg>
+<status status="PASS" starttime="20231219 10:34:50.847" endtime="20231219 10:34:50.927"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231219 10:34:50.927" endtime="20231219 10:34:53.005"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:53.005"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:48.054" endtime="20231219 10:34:53.005"/>
+</iter>
+<status status="PASS" starttime="20231219 10:34:38.126" endtime="20231219 10:34:53.005"/>
+</for>
+<status status="PASS" starttime="20231219 10:34:38.113" endtime="20231219 10:34:53.005"/>
+</kw>
+<status status="PASS" starttime="20231219 10:34:38.113" endtime="20231219 10:34:53.005"/>
+</test>
+<status status="PASS" starttime="20231219 10:34:37.927" endtime="20231219 10:34:53.005"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Form">Form</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
